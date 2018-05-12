@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Log On"; ObjectID = "InW-Xj-nOW"; */
+"InW-Xj-nOW.normalTitle" = "Log On";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "ddB-9U-TAp"; */
+"ddB-9U-TAp.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "User Name"; ObjectID = "xxd-q9-GEb"; */
+"xxd-q9-GEb.placeholder" = "User Name";

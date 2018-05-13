@@ -304,7 +304,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="104" height="86"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-ep-eRf" userLabel="Selected Cell">
+                                                                <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3b-ep-eRf" userLabel="Selected Cell">
                                                                     <rect key="frame" x="37" y="196" width="37" height="30"/>
                                                                     <color key="backgroundColor" red="0.91795903444290161" green="0.89332062005996704" blue="0.55420756340026855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -333,6 +333,7 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="dateLabel" destination="ceX-yg-mAZ" id="mGm-gB-0xa"/>
+                                                            <outlet property="selectedView" destination="Z3b-ep-eRf" id="c6t-Bx-XCF"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -366,21 +367,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kew-cR-U6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2562.3188405797105" y="133.69565217391306"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Pgz-bE-dBS">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iIN-Ps-DbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="KmQ-3C-o2B" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3AD-dx-hOY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="If0-aJ-Sa9"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="3431" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HDg-hL-nnO">

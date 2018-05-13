@@ -36,4 +36,11 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         let parameters = ConfigurationParameters(startDate: startDate!, endDate: endDate!)
         return parameters
     }
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validCell = cell as? CustomCell else {
+            return
+        }
+        validCell.selectedView.isHidden = false
+    }
+    
 }

@@ -63,10 +63,10 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         myCustomCell.dateLabel.text = cellState.text
         if cellState.isSelected{
             myCustomCell.selectedView.isHidden = false
-            myCustomCell.dateLabel.textColor = UIColor.red
+            myCustomCell.dateLabel.textColor = UIColor.black
         }else{
             myCustomCell.selectedView.isHidden = true
-            myCustomCell.dateLabel.textColor = UIColor.black
+            myCustomCell.dateLabel.textColor = UIColor.white
         }
     }
     
@@ -74,7 +74,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         guard let validCell = cell as? CustomCell else { return }
         
         if cellState.dateBelongsTo == .thisMonth{
-            validCell.dateLabel.textColor = UIColor.black
+            validCell.dateLabel.textColor = UIColor.white
         }else{
             validCell.dateLabel.textColor = UIColor.gray
         }

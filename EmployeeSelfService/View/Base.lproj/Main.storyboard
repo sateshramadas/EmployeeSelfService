@@ -363,6 +363,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gmh-hx-iqK"/>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="vcG-Zh-pmg" id="U3M-Yh-usN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kew-cR-U6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

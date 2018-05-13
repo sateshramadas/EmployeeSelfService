@@ -10,18 +10,28 @@ import Foundation
 import JTAppleCalendar
 
 class CalendarViewController : UIViewController{
-    let formatter = DateFormatter()    
+    let formatter = DateFormatter()
+    
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    
+    override func viewDidLoad() {
+        setupCalendarView()
+    }
+    func setupCalendarView(){
+        calendarView.minimumLineSpacing = 0
+        calendarView.minimumInteritemSpacing = 0 
+    }
 }
 
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource{
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let myCustomCell = cell as! CustomCell
-        myCustomCell.dateLabel.text = cellState.text
+        buildACellForDispla(myCustomCell: myCustomCell, cellState: cellState, date: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let myCustomCell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        myCustomCell.dateLabel.text = cellState.text
+        buildACellForDispla(myCustomCell: myCustomCell, cellState: cellState, date: date)
         return myCustomCell
     }
     
@@ -37,10 +47,22 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         return parameters
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CustomCell else {
-            return
-        }
+        guard let validCell = cell as? CustomCell else {return}
         validCell.selectedView.isHidden = false
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validCell = cell as? CustomCell else {return}
+        validCell.selectedView.isHidden = true
+    }
+    
+    func buildACellForDispla(myCustomCell: CustomCell, cellState: CellState, date: Date){
+        myCustomCell.dateLabel.text = cellState.text
+        if cellState.isSelected{
+            myCustomCell.selectedView.isHidden = false
+        }else{
+            myCustomCell.selectedView.isHidden = true
+        }
     }
     
 }

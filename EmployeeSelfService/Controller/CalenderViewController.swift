@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import JTAppleCalendar
 
 class CalendarViewController : UIViewController{
@@ -26,12 +27,14 @@ class CalendarViewController : UIViewController{
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource{
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let myCustomCell = cell as! CustomCell
-        buildACellForDispla(myCustomCell: myCustomCell, cellState: cellState, date: date)
+        buildACellForDisplay(myCustomCell: myCustomCell, cellState: cellState, date: date)
+        handleCellTextColor(cell: myCustomCell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let myCustomCell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        buildACellForDispla(myCustomCell: myCustomCell, cellState: cellState, date: date)
+        buildACellForDisplay(myCustomCell: myCustomCell, cellState: cellState, date: date)
+        handleCellTextColor(cell: myCustomCell, cellState: cellState)
         return myCustomCell
     }
     
@@ -48,20 +51,32 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     }
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CustomCell else {return}
-        validCell.selectedView.isHidden = false
+        buildACellForDisplay(myCustomCell: validCell, cellState: cellState, date: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CustomCell else {return}
-        validCell.selectedView.isHidden = true
+        buildACellForDisplay(myCustomCell: validCell, cellState: cellState, date: date)
     }
     
-    func buildACellForDispla(myCustomCell: CustomCell, cellState: CellState, date: Date){
+    func buildACellForDisplay(myCustomCell: CustomCell, cellState: CellState, date: Date){
         myCustomCell.dateLabel.text = cellState.text
         if cellState.isSelected{
             myCustomCell.selectedView.isHidden = false
+            myCustomCell.dateLabel.textColor = UIColor.red
         }else{
             myCustomCell.selectedView.isHidden = true
+            myCustomCell.dateLabel.textColor = UIColor.black
+        }
+    }
+    
+    func handleCellTextColor(cell: JTAppleCell?, cellState: CellState){
+        guard let validCell = cell as? CustomCell else { return }
+        
+        if cellState.dateBelongsTo == .thisMonth{
+            validCell.dateLabel.textColor = UIColor.black
+        }else{
+            validCell.dateLabel.textColor = UIColor.gray
         }
     }
     

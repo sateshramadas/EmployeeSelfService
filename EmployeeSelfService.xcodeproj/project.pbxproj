@@ -10,11 +10,11 @@
 		16ACD55520A6EEC900E13103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACD55420A6EEC900E13103 /* AppDelegate.swift */; };
 		16ACD55720A6EEC900E13103 /* LogonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACD55620A6EEC900E13103 /* LogonViewController.swift */; };
 		16ACD55A20A6EEC900E13103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ACD55820A6EEC900E13103 /* Main.storyboard */; };
-		16ACD55C20A6EEC900E13103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16ACD55B20A6EEC900E13103 /* Assets.xcassets */; };
 		16ACD55F20A6EEC900E13103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16ACD55D20A6EEC900E13103 /* LaunchScreen.storyboard */; };
 		16ACD56C20A6FEE400E13103 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16ACD56B20A6FEE300E13103 /* GoogleService-Info.plist */; };
 		16ACD56E20A7622700E13103 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACD56D20A7622700E13103 /* CustomCell.swift */; };
 		16ACD57020A76ECC00E13103 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ACD56F20A76ECC00E13103 /* CalenderViewController.swift */; };
+		16ACD57220A91BBB00E13103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16ACD57120A91BBA00E13103 /* Assets.xcassets */; };
 		F5EF2BD536765DDD621E50D4 /* Pods_EmployeeSelfService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC108A30AE3C55C50CB294BB /* Pods_EmployeeSelfService.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,12 +23,12 @@
 		16ACD55420A6EEC900E13103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16ACD55620A6EEC900E13103 /* LogonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogonViewController.swift; sourceTree = "<group>"; };
 		16ACD55920A6EEC900E13103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		16ACD55B20A6EEC900E13103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16ACD55E20A6EEC900E13103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16ACD56020A6EEC900E13103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16ACD56B20A6FEE300E13103 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16ACD56D20A7622700E13103 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		16ACD56F20A76ECC00E13103 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		16ACD57120A91BBA00E13103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65F70F557C9A128B17D9F91D /* Pods-EmployeeSelfService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeSelfService.release.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeSelfService/Pods-EmployeeSelfService.release.xcconfig"; sourceTree = "<group>"; };
 		7840292C6B787AB56E32A421 /* Pods-EmployeeSelfService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeeSelfService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EmployeeSelfService/Pods-EmployeeSelfService.debug.xcconfig"; sourceTree = "<group>"; };
 		EC108A30AE3C55C50CB294BB /* Pods_EmployeeSelfService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeeSelfService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +80,7 @@
 		16ACD56620A6F99300E13103 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				16ACD55B20A6EEC900E13103 /* Assets.xcassets */,
+				16ACD57120A91BBA00E13103 /* Assets.xcassets */,
 				16ACD55D20A6EEC900E13103 /* LaunchScreen.storyboard */,
 				16ACD55820A6EEC900E13103 /* Main.storyboard */,
 				16ACD56D20A7622700E13103 /* CustomCell.swift */,
@@ -183,7 +183,7 @@
 			files = (
 				16ACD55F20A6EEC900E13103 /* LaunchScreen.storyboard in Resources */,
 				16ACD56C20A6FEE400E13103 /* GoogleService-Info.plist in Resources */,
-				16ACD55C20A6EEC900E13103 /* Assets.xcassets in Resources */,
+				16ACD57220A91BBB00E13103 /* Assets.xcassets in Resources */,
 				16ACD55A20A6EEC900E13103 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,16 +12,24 @@ import JTAppleCalendar
 
 class CalendarViewController : UIViewController{
     let formatter = DateFormatter()
+    @IBOutlet weak var monthOfCalendar: UILabel!
     
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    @IBOutlet weak var yearOfCalendar: UILabel!
     
     override func viewDidLoad() {
         setupCalendarView()
+        self.navigationItem.title =  "TimeSheets"
     }
     func setupCalendarView(){
         calendarView.minimumLineSpacing = 0
-        calendarView.minimumInteritemSpacing = 0 
+        calendarView.minimumInteritemSpacing = 0
+        calendarView.visibleDates { (visibleDates) in
+            self.setupViewsOfCalendar(from: visibleDates)
+        }
     }
+    
+    
 }
 
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource{
@@ -39,6 +47,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     }
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        //set some default start and end dates for Calendar
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone   = Calendar.current.timeZone
         formatter.locale     = Calendar.current.locale
@@ -59,6 +68,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         buildACellForDisplay(myCustomCell: validCell, cellState: cellState, date: date)
     }
     
+    //General Cell Display Module and also change colors for indates, outdates and Current Month
     func buildACellForDisplay(myCustomCell: CustomCell, cellState: CellState, date: Date){
         myCustomCell.dateLabel.text = cellState.text
         if cellState.isSelected{
@@ -70,6 +80,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         }
     }
     
+    //TexColor change for selected and DeSelected Cells
     func handleCellTextColor(cell: JTAppleCell?, cellState: CellState){
         guard let validCell = cell as? CustomCell else { return }
         
@@ -78,6 +89,22 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         }else{
             validCell.dateLabel.textColor = UIColor.gray
         }
+    }
+    
+    //This is to change the month and date
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setupViewsOfCalendar(from: visibleDates)
+    }
+    
+    //SetupViewsOfCalendar
+    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo){
+        let date = visibleDates.monthDates.first!.date
+        
+        formatter.dateFormat = "yyyy"
+        yearOfCalendar.text = formatter.string(from: date)
+        
+        formatter.dateFormat = "MMMM"
+        monthOfCalendar.text = formatter.string(from: date)
     }
     
 }

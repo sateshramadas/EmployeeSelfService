@@ -137,7 +137,7 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Welcome-->
+        <!--Title-->
         <scene sceneID="1US-ml-Bcl">
             <objects>
                 <viewController id="Oie-ie-oRn" sceneMemberID="viewController">
@@ -165,9 +165,6 @@
                                                         <state key="normal" title="Timesheets">
                                                             <color key="titleColor" red="0.35532931280000002" green="0.19524294480000001" blue="0.38306490380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
-                                                        <connections>
-                                                            <segue destination="TmR-Bg-063" kind="show" id="kYT-95-zGc"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfW-2V-EsX">
                                                         <rect key="frame" x="0.0" y="129.5" width="295" height="74.5"/>
@@ -221,9 +218,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HD9-zh-6ft"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="eyF-gY-Uaf" userLabel="Home">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="NGg-sZ-Bkt"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="3g3-1Y-Euy"/>
+                    <connections>
+                        <segue destination="TmR-Bg-063" kind="show" id="sTD-t1-cYq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Jg-jU-Tut" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -363,7 +361,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceX-yg-mAZ">
-                                                                    <rect key="frame" x="31" y="148.5" width="42" height="21"/>
+                                                                    <rect key="frame" x="31" y="173.5" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -410,15 +408,35 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gmh-hx-iqK"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="uU0-Ug-vxx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="NJM-Dx-wg1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarView" destination="vcG-Zh-pmg" id="U3M-Yh-usN"/>
                         <outlet property="monthOfCalendar" destination="m45-XR-w9r" id="gF5-Gz-1ut"/>
                         <outlet property="yearOfCalendar" destination="Yjg-t4-tXJ" id="VDO-DT-ZDB"/>
+                        <segue destination="P6V-Gb-do5" kind="show" id="jJB-zY-YyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kew-cR-U6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2562.3188405797105" y="133.69565217391306"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xvj-PO-VsI">
+            <objects>
+                <viewController id="P6V-Gb-do5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eWv-5o-LU3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oG3-b4-7rP"/>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fvd-ea-idM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3342" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HDg-hL-nnO">
